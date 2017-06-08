@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="row">
+        <div id="chartCon1"class="col-sm-6 col-md-6">
+            <div id="chart1"><svg
+             viewBox="0 0 720 250"
+                preserveAspectRatio="xMidYMid meet">
+            </svg></div>
+        </div>
+        <div id ="chartCon2" class="col-sm-6 col-md-6">
+            <div id="chart2">
+                <svg
+                viewBox="0 0 720 250"
+                preserveAspectRatio="xMidYMid meet">
+                </svg></div>
+        </div>
+    </div>
+</div>
+
+<script>
+if (!sessionStorage.fact)
+{
+$(document).ready(function(){
+    $.ajax({
+    url:'/fact',
+    type:'GET',
+    dataType:'json',
+    success: function(json) {
+        console.log("Success Fact Data Retrieval");
+        sessionStorage.setItem("fact", JSON.stringify(json));
+        var data = JSON.parse(sessionStorage.fact);
+        viz(data);
+
+    },
+    error: function(data){
+        alert('There was some error');
+    }
+});
+});
+} else {
+    console.log('From Storage');
+    var data = JSON.parse(sessionStorage.fact);
+    viz(data);
+
+}
+
+function viz(data){
+    //chart variables described as Global variables
+    //so they are available for update later.
+    chart1 = barChart().width(720)
+                    .height(250)
+                    .data(data)
+                    .columnY("amount")
+                    .columnX("dateid")
+                    .title("Indemnity");
+
+    chart2 = barChart().width(720)
+                    .height(250)
+                    .data(data)
+                    .columnY("count")
+                    .columnX("dateid")
+                    .title("Open Counts");
+
+        d3.select('#chart1').call(chart1);
+        d3.select('#chart2').call(chart2);
+
+
+
+};
+
+
+
+</script>
+</ul>
+</div>

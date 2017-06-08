@@ -1,0 +1,19 @@
+<% include header %>
+<% include nav %>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <% include selections %>
+        </div>
+        <div class="col-sm-9 col-md-10 main">
+            <%- include(page, {page: page}); %>
+        </div>
+    </div>
+</div>
+<button type="submit"
+id="filter" class="btn btn-lg" data-toggle="modal" data-target="#myModal"></button>
+
+<% include filters/modal %>
+<% include footer %>

@@ -1,0 +1,13 @@
+<h3 class="page-header">Movement</h3>
+<div id="result"></div>
+
+<script>
+// Retrieve
+var res = document.getElementById("result");
+var data = JSON.parse(sessionStorage.fact);
+res.appendChild(document.createElement('ul'));
+data.forEach(function(d){
+    res.appendChild(document.createElement('li'))
+        .appendChild(document.createTextNode(d.count));
+});
+</script>

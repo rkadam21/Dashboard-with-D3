@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "regionid":1,
+        "dateid":"2016-05",
+        "count":245,
+        "amount":3000
+    },
+    {
+        "id": 2,
+        "regionid":2,
+        "dateid":"2016-06",
+        "count":100,
+        "amount":3825
+    },
+    {
+        "id": 3,
+        "regionid":3,
+        "dateid":"2016-07",
+        "count":50,
+        "amount":1000
+    },
+    {
+        "id": 4,
+        "regionid":1,
+        "dateid":"2016-08",
+        "count":245,
+        "amount":3000
+    },
+    {
+        "id": 5,
+        "regionid":2,
+        "dateid":"2016-09",
+        "count":100,
+        "amount":3825
+    },
+    {
+        "id": 6,
+        "regionid":3,
+        "dateid":"2016-10",
+        "count":75,
+        "amount":1000
+    },
+    {
+        "id": 7,
+        "regionid":1,
+        "dateid":"2016-11",
+        "count":245,
+        "amount":3000
+    },
+    {
+        "id": 8,
+        "regionid":2,
+        "dateid":"2016-12",
+        "count":100,
+        "amount":3825
+    },
+    {
+        "id": 9,
+        "regionid":3,
+        "dateid":"2017-01",
+        "count":100,
+        "amount":1000
+    },
+    {
+        "id": 10,
+        "regionid":1,
+        "dateid":"2017-02",
+        "count":245,
+        "amount":3000
+    },
+    {
+        "id": 11,
+        "regionid":2,
+        "dateid":"2017-03",
+        "count":100,
+        "amount":3825
+    },
+    {
+        "id": 12,
+        "regionid":3,
+        "dateid":"2017-04",
+        "count":50,
+        "amount":1000
+    }
+]

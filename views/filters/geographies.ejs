@@ -1,0 +1,69 @@
+<div class="container-fluid">
+<form id="subForm" onsubmit="return test()">
+<div class="row">
+    <div class="col-sm-6 col-md-6">
+        <select id="myselect" class="form-control" multiple>
+        </select>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        Test
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <input type="submit" data-toggle="modal" data-target="#myModal">Submit</input>
+
+    </div>
+
+</div>
+</form>
+</div>
+
+
+<!-- Get script for all the prompts -->
+<script>
+function test()
+{
+    var selVal = $("#myselect").val();
+    var dat = $.grep(JSON.parse(sessionStorage.fact), function( n, i ){
+                    return n.regionid === +selVal;
+                });
+
+    chart1.data(dat, "#chart1");
+    chart2.data(dat, "#chart2");
+
+    return false;
+};
+
+if (!sessionStorage.geo)
+{
+$(document).ready(function(){
+    $.ajax({
+    url:'/filters/geographies',
+    type:'GET',
+    dataType:'json',
+    success: function(json) {
+        console.log('Geography Success Retrieval!');
+            sessionStorage.setItem("geo", JSON.stringify(json));
+            geo(json);
+    },
+    error: function(data){
+        alert('There was some error');
+    }
+    });
+});
+} else {
+        console.log("Geographies from storage!");
+        var dat = JSON.parse(sessionStorage.geo);
+        geo(dat);
+};
+
+function geo(data){
+    $.each(data, function(i,d) {
+        $('#myselect').append($('<option>')
+            .text(d["value"]).attr('value', d["id"]));
+        });
+}
+
+
+</script>
